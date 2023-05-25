@@ -2,8 +2,8 @@
 import {api} from "../utils/api"
 
 export default function HomePage() {
-    const {data: article, isLoading, isError} = api.article.all.useQuery()
-    console.log('aaa',article);
+  const {data: article, isLoading, isError} = api.article.all.useQuery()
+
   return (
     <div>
       <div>
