@@ -1,14 +1,9 @@
-"use client"
-import { type AppType } from "next/app";
-import { type Session } from "next-auth";
-import { SessionProvider } from "next-auth/react";
 import { api } from "../utils/api";
+import ProvidersWrapper from "~/ProvidersWrapper";
 
 function RootLayout({
   children,
-  session,
 }: {
-    session: Session;
   children: React.ReactNode;
 }) {
   return (
@@ -16,10 +11,10 @@ function RootLayout({
       <html>
         <head></head>
         <body>
-          <main>
-          <SessionProvider session={session}>
-          {children}
-          </SessionProvider>
+          <main>   
+          <ProvidersWrapper>
+            {children}
+          </ProvidersWrapper>
           </main>
         </body>
       </html>
